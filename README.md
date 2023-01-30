@@ -15,5 +15,4 @@ All the mandatorys feature was done.
 - Used some animations to make the UI look better.
 - Paginations on the list TV shows page
 
-Please feel free to reach out to me anytime.# jobsity_test
-# jobsity_test
+Please feel free to reach out to me anytime.
