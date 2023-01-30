@@ -78,7 +78,8 @@ class _TVShowDetailedViewState extends State<_TVShowDetailedView> {
                             widget.viewModel.id.toString(),
                         child: Text(
                           widget.viewModel.name,
-                          style: context.textTheme.titleLarge,
+                          style: context.textTheme.titleMedium,
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),

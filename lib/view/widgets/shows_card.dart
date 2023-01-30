@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobsity_test/core/extensions.dart';
 import 'package:jobsity_test/core/theme.dart';
 import 'package:jobsity_test/view/list_shows_view_mapper.dart';
 import 'package:jobsity_test/view/model/list_shows_view_model.dart';
@@ -55,6 +56,7 @@ class ShowsCard extends StatelessWidget {
                 child: Text(
                   showsViewModel.name,
                   textAlign: TextAlign.center,
+                  style: context.textTheme.titleMedium,
                 ),
               ),
             ),
