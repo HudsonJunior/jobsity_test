@@ -23,8 +23,11 @@ class TVShowModel {
           ? map_['image']['original'] as String
           : 'https://media.istockphoto.com/id/1147544807/pt/vetorial/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=yQW3zPovyK7AFC4uApkbb5fiopWQeU1PiIRuDublNZ4=',
       id: map_['id'],
-      scheduledTime:
-          map_['schedule']['time'] + ' ' + map_['schedule']['days'][0],
+      scheduledTime: map_['schedule']['time'] +
+          ' ' +
+          (map_['schedule']['days'].isNotEmpty
+              ? map_['schedule']['days'][0]
+              : ''),
       genres: (map_['genres'] as List).map((e) => e.toString()),
       summary: map_['summary'],
     );

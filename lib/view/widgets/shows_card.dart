@@ -39,18 +39,25 @@ class ShowsCard extends StatelessWidget {
                   topLeft: Radius.circular(12),
                   topRight: Radius.circular(12),
                 ),
-                child: Image.network(
-                  showsViewModel.imageUrl,
-                  fit: BoxFit.fill,
+                child: Hero(
+                  tag: showsViewModel.imageUrl,
+                  child: Image.network(
+                    showsViewModel.imageUrl,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ),
             const SizedBox(height: 8),
             Center(
+              child: Hero(
+                tag: showsViewModel.name + showsViewModel.id.toString(),
                 child: Text(
-              showsViewModel.name,
-              textAlign: TextAlign.center,
-            )),
+                  showsViewModel.name,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
             const SizedBox(height: 4),
           ],
         ),

@@ -56,9 +56,12 @@ class _TVShowDetailedViewState extends State<_TVShowDetailedView> {
                   snap: true,
                   expandedHeight: 200,
                   flexibleSpace: FlexibleSpaceBar(
-                    background: Image.network(
-                      widget.viewModel.imageUrl,
-                      fit: BoxFit.fill,
+                    background: Hero(
+                      tag: widget.viewModel.imageUrl,
+                      child: Image.network(
+                        widget.viewModel.imageUrl,
+                        fit: BoxFit.fill,
+                      ),
                     ),
                     stretchModes: const [StretchMode.fadeTitle],
                     collapseMode: CollapseMode.pin,
@@ -70,9 +73,13 @@ class _TVShowDetailedViewState extends State<_TVShowDetailedView> {
                   padding: const EdgeInsets.all(16),
                   sliver: SliverToBoxAdapter(
                     child: Center(
-                      child: Text(
-                        widget.viewModel.name,
-                        style: context.textTheme.titleLarge,
+                      child: Hero(
+                        tag: widget.viewModel.name +
+                            widget.viewModel.id.toString(),
+                        child: Text(
+                          widget.viewModel.name,
+                          style: context.textTheme.titleLarge,
+                        ),
                       ),
                     ),
                   ),
