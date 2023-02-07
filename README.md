@@ -1,5 +1,5 @@
 
-All the mandatorys feature was done.
+All mandatory features have been done.
 
 ## Compiling the app
 - The Flutter's version used to build this app was v3.7.0.
@@ -31,5 +31,6 @@ All the mandatorys feature was done.
 - I could write unit, widget and integrations tests. That is something that I am really used to do. For this project, I didn't have the time to create the tests due to other personal projects I have to deal during my day.
 - The time I spent on the challege was about 10 hours. I do not think a project I did on only 10 hours reflects on all the experience I have. When working in a project, focused 8 hours each day, definitely thw work I do is way more better than this.
 - I would like to have a more technical interview, where I could answer any questions about the Flutter framework. I know how the framework works in the deep and I am sure I have enough knowledge to be considered a mid-level to Senior and not just a Junior.
+- Please understand that I have other work to do in my day, so I tried to focus on this challenge the best I could, but it's difficult when you have to deal with other responsibilities simultaneously. That is why I prefer technical interviews to talk about my experience and not just create a small project to show my abilities, I don't think this challenge tells everything you need to know about my experience. I can show all my theoretical and practical knowledge when talking directly to the evaluator. When creating only a small project to evaluate my experience, you don't see how I code and why I made some decisions.
 
 Please feel free to reach out to me anytime.
