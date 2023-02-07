@@ -8,9 +8,7 @@ class DetailedEpisodePage extends StatelessWidget {
   const DetailedEpisodePage({super.key, required this.viewModel});
 
   @override
-  Widget build(BuildContext context) {
-    return _DetailedEpisodeView(viewModel);
-  }
+  Widget build(BuildContext context) => _DetailedEpisodeView(viewModel);
 }
 
 class _DetailedEpisodeView extends StatefulWidget {
@@ -44,9 +42,12 @@ class _DetailedEpisodeViewState extends State<_DetailedEpisodeView> {
             'Season ${widget.viewModel.season}',
             style: context.textTheme.titleMedium,
           ),
-          Text(
-            '${widget.viewModel.number} - ${widget.viewModel.name}',
-            style: context.textTheme.titleMedium,
+          Hero(
+            tag: widget.viewModel.name,
+            child: Text(
+              widget.viewModel.name,
+              style: context.textTheme.bodyMedium,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),

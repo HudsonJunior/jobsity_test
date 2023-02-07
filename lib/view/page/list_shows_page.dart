@@ -52,45 +52,14 @@ class __ListTVShowsView extends State<_ListTVShowsView> {
             padding: const EdgeInsets.all(8.0),
             child: CustomScrollView(
               slivers: [
-                SliverAppBar(
-                  floating: true,
-                  snap: true,
-                  expandedHeight: 100,
-                  flexibleSpace: FlexibleSpaceBar(
-                    titlePadding: const EdgeInsets.symmetric(horizontal: 8),
-                    title: Column(
-                      children: [
-                        const SizedBox(height: kToolbarHeight),
-                        Flexible(
-                          child: Text(
-                            'TV shows',
-                            style: context.textTheme.titleLarge,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Expanded(
-                          child: TextField(
-                            controller: controller,
-                            style: context.textTheme.bodyMedium,
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12)),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                      ],
-                    ),
-                    stretchModes: const [StretchMode.fadeTitle],
-                    collapseMode: CollapseMode.pin,
-                    centerTitle: true,
-                  ),
-                  centerTitle: true,
-                ),
+                _ListShowsAppBar(controller: controller),
                 if (state is ListTVShowsLoadingState)
-                  const SliverToBoxAdapter(
-                    child: Center(
-                      child: CircularProgressIndicator(),
+                  SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height,
+                      child: const Center(
+                        child: CircularProgressIndicator(),
+                      ),
                     ),
                   ),
                 if (state is ListTVShowsSuccessState)
@@ -123,6 +92,51 @@ class __ListTVShowsView extends State<_ListTVShowsView> {
           );
         },
       ),
+    );
+  }
+}
+
+class _ListShowsAppBar extends StatelessWidget {
+  final TextEditingController controller;
+
+  const _ListShowsAppBar({required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverAppBar(
+      floating: true,
+      snap: true,
+      expandedHeight: 100,
+      flexibleSpace: FlexibleSpaceBar(
+        titlePadding: const EdgeInsets.symmetric(horizontal: 8),
+        title: Column(
+          children: [
+            const SizedBox(height: kToolbarHeight),
+            Flexible(
+              child: Text(
+                'TV shows',
+                style: context.textTheme.titleLarge,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: TextField(
+                controller: controller,
+                style: context.textTheme.bodyMedium,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+          ],
+        ),
+        stretchModes: const [StretchMode.fadeTitle],
+        collapseMode: CollapseMode.pin,
+        centerTitle: true,
+      ),
+      centerTitle: true,
     );
   }
 }

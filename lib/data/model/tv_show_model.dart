@@ -1,3 +1,5 @@
+import 'package:jobsity_test/core/extensions.dart';
+
 class TVShowModel {
   final int id;
   final String name;
@@ -29,7 +31,7 @@ class TVShowModel {
               ? map_['schedule']['days'][0]
               : ''),
       genres: (map_['genres'] as List).map((e) => e.toString()),
-      summary: map_['summary'],
+      summary: (map_['summary'] as String).removeAllHtmlTags,
     );
   }
 }
@@ -57,7 +59,9 @@ class TVShowEpisodeModel {
       name: map['name'] as String,
       number: map['number'] as int,
       season: map['season'] as int,
-      summary: map['summary'] != null ? map['summary'] as String : 'No summary',
+      summary: map['summary'] != null
+          ? (map['summary'] as String).removeAllHtmlTags
+          : 'No summary',
       imageUrl: map['image'] != null
           ? map['image']['original'] as String
           : 'https://media.istockphoto.com/id/1147544807/pt/vetorial/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=yQW3zPovyK7AFC4uApkbb5fiopWQeU1PiIRuDublNZ4=',
